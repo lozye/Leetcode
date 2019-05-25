@@ -4,16 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Leetcode.Lession.two_sum
+namespace Leetcode.Lession
 {
-    class Twosum
+    interface ILession
     {
-
-        public int[] TwoSum(int[] nums, int target)
-        {
-
-
-
-        }
+        void Execute();
     }
 }

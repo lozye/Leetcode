@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Leetcode.Lession;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +12,22 @@ namespace Leetcode
     {
         static void Main(string[] args)
         {
-            new Lession.two_sum.Twosum().TwoSum(new int[] { 2, 7, 11, 15 }, 9);
+            Test<TwosumLession>();
+
         }
+        private static void Test<T>() where T : ILession
+        {
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+            var _lession = Activator.CreateInstance<T>();
+            int runcount = 1_000;
+            for (int i = 0; i < runcount; i++)           
+                _lession.Execute(); 
+            watch.Stop();
+            Console.WriteLine($"Total {watch.ElapsedMilliseconds.ToString()}ms One {(watch.ElapsedMilliseconds / runcount).ToString()}ms");
+            Console.Read();
+        }
+
+
     }
 }
