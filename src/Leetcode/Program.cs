@@ -12,7 +12,7 @@ namespace Leetcode
     {
         static void Main(string[] args)
         {
-            Test<TwosumLession>();
+            Test<AddTwoNumbersLession>();
 
         }
         private static void Test<T>() where T : ILession
