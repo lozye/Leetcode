@@ -4,6 +4,8 @@ using System.Text;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Leetcode.Lession
 {
@@ -23,7 +25,8 @@ namespace Leetcode.Lession
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        bool Add(T item);
+        bool Add(T item);      
+
     }
 
     class AsyncQueueDebug
@@ -38,6 +41,7 @@ namespace Leetcode.Lession
             {
                 count++;
                 File.AppendAllText(desktop, x, Encoding.UTF8);
+                Thread.Sleep(10);
             });
 
             Func<int, string> invoke = x => $"{DateTime.Now.ToString("HH:mm:ss")}=>{x.ToString()}\r\n";
@@ -52,8 +56,8 @@ namespace Leetcode.Lession
             }
             Console.WriteLine("finish");
             Console.ReadLine();
-            Console.WriteLine(count);
-            Console.ReadLine();
+            while (true) { Console.WriteLine(count); Console.ReadLine(); }
+
         }
     }
 

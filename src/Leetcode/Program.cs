@@ -12,7 +12,7 @@ namespace Leetcode
     {
         static void Main(string[] args)
         {
-            new RemoveNthFromEndLession().Execute();
+            AsyncQueueDebug.Start();
             Console.Read();
         }
         private static void Test<T>(int runcount = 1000) where T : ILession
